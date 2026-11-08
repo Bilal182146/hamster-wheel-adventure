@@ -20,6 +20,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+              - name: Extract source files
+        run: |
+          mkdir -p src
+          unzip -o src.zip -d /tmp/source
+          if [ -d /tmp/source/src ]; then
+            cp -a /tmp/source/src/. src/
+          else
+            cp -a /tmp/source/. src/
+          fi
 
       - name: Setup Node
         uses: actions/setup-node@v4
