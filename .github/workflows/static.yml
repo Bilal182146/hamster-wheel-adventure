@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-              - name: Extract source files
+      - name: Extract source files
         run: |
           mkdir -p src
           unzip -o src.zip -d /tmp/source
